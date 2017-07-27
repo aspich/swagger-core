@@ -72,6 +72,11 @@
                 <artifactId>wagon-webdav</artifactId>
                 <version>1.0-beta-1</version>
             </extension>
+    <extension>
+      <groupId>io.packagecloud.maven.wagon</groupId>
+      <artifactId>maven-packagecloud-wagon</artifactId>
+      <version>0.0.4</version>
+    </extension>
         </extensions>
         <defaultGoal>install</defaultGoal>
         <directory>target</directory>
@@ -295,6 +300,20 @@
             </plugins>
         </pluginManagement>
     </build>
+ <distributionManagement>
+  <repository>
+    <id>packagecloud-travis</id>
+    <url>
+      packagecloud+https://packagecloud.io/aspich/master
+    </url>
+  </repository>
+  <snapshotRepository>
+    <id>packagecloud-travis</id>
+    <url>
+      packagecloud+https://packagecloud.io/aspich/master
+    </url>
+  </snapshotRepository>
+</distributionManagement>     
     <profiles>
         <profile>
             <id>release-sign-artifacts</id>
