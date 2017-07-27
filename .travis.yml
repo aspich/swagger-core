@@ -1,15 +1,11 @@
 sudo: false
 language: java
 script: mvn clean verify
-jdk:
-  - oraclejdk7
-
 services:
 - docker
 cache:
   directories:
   - "$HOME/.cache"
-
 deploy:
   provider: script
   script: "cp .travis.settings.xml $HOME/.m2/settings.xml && mvn deploy"
